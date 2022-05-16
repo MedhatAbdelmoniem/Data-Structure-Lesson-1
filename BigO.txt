@@ -10,3 +10,7 @@ The time complexity is O(n) because we are looping one time and the loop increas
 
 Task2::
 
+The time complexity is O(n) because we are looping one time and the loop increase depending on the input
+
+Task3::
+

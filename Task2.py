@@ -20,3 +20,13 @@ Print a message:
 September 2016.".
 """
 
+theLongest = 0
+index = 0
+counter = 0
+for number in calls:
+    if int(number[3]) >= theLongest:
+        theLongest = int(number[3])
+        index = counter
+    counter += 1
+
+print(calls[index][0] + ' spent the longest time, ' + str(theLongest) + ' seconds, on the phone during September 2016.')

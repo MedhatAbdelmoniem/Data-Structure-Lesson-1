@@ -29,4 +29,4 @@ for numbers in all:
     if numbers[1] not in different:
         different.append(numbers[1])
 
-print(len(different))
+print('There are ' + len(different) + ' different telephone numbers in the records.')
