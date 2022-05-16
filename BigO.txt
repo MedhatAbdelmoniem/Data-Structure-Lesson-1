@@ -1,0 +1,7 @@
+Task0::
+
+The time complexity is O(logn) as we are not doing anything except three lines of code
+
+
+Task1::
+
