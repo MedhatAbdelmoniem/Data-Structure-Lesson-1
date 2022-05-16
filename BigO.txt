@@ -5,3 +5,8 @@ The time complexity is O(logn) as we are not doing anything except three lines o
 
 Task1::
 
+The time complexity is O(n) because we are looping one time and the loop increase depending on the input
+
+
+Task2::
+
