@@ -46,9 +46,12 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 areaCodes = []
+callers = 0
+receivers = 0
 
 for numbers in calls:
   if numbers[0][slice(5)] == '(080)':
+    callers += 1
     if numbers[1][slice(2)] == '(0':
       areaCodes.append(numbers[1][slice(indexOf(numbers[1],')') + 1)])
     if numbers[1][slice(3)] == '140':
@@ -59,8 +62,13 @@ for numbers in calls:
       areaCodes.append(numbers[1][slice(4)])
     if numbers[1][slice(1)] == '9':
       areaCodes.append(numbers[1][slice(4)])
+    if numbers[1][slice(5)] == '(080)':
+      receivers +=  1
 
 print('The numbers called by people in Bangalore have codes: ')
 areaCodes.sort()
 for areas in areaCodes:
   print(areas)
+
+rounding = round((receivers / callers) * 100, 2)
+print(rounding + ' percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')

@@ -14,7 +14,7 @@ The time complexity is O(n) because we are looping one time and the loop increas
 
 Task3::
 
-as of part a The time complexity is O(n) because we are looping one time and the loop increase depending on the input
+as of part a  and b together the time complexity is O(n) because we are looping one time and the loop increase depending on the input
 
 Task4::
 
