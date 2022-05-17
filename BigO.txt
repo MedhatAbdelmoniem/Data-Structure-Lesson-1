@@ -14,3 +14,8 @@ The time complexity is O(n) because we are looping one time and the loop increas
 
 Task3::
 
+
+
+Task4::
+
+Without the sorting and the printing list the time complexity is O(n) because we are looping one time and the loop increase depending on the input
