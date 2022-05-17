@@ -53,15 +53,19 @@ for numbers in calls:
   if numbers[0][slice(5)] == '(080)':
     callers += 1
     if numbers[1][slice(2)] == '(0':
-      areaCodes.append(numbers[1][slice(indexOf(numbers[1],')') + 1)])
-    if numbers[1][slice(3)] == '140':
+      if numbers[1][slice(indexOf(numbers[1],')') + 1)] not in areaCodes:
+        areaCodes.append(numbers[1][slice(indexOf(numbers[1],')') + 1)])
+    if numbers[1][slice(3)] == '140' and '140' not in areaCodes:
       areaCodes.append('140')
     if numbers[1][slice(1)] == '7':
-      areaCodes.append(numbers[1][slice(4)])
+      if numbers[1][slice(4)] not in areaCodes:
+        areaCodes.append(numbers[1][slice(4)])
     if numbers[1][slice(1)] == '8':
-      areaCodes.append(numbers[1][slice(4)])
+      if numbers[1][slice(4)] not in areaCodes:
+        areaCodes.append(numbers[1][slice(4)])
     if numbers[1][slice(1)] == '9':
-      areaCodes.append(numbers[1][slice(4)])
+      if numbers[1][slice(4)] not in areaCodes:
+        areaCodes.append(numbers[1][slice(4)])
     if numbers[1][slice(5)] == '(080)':
       receivers +=  1
 
@@ -71,4 +75,4 @@ for areas in areaCodes:
   print(areas)
 
 rounding = round((receivers / callers) * 100, 2)
-print(rounding + ' percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+print(str(rounding) + ' percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')

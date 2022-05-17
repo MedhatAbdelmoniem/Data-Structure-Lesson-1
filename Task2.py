@@ -20,13 +20,31 @@ Print a message:
 September 2016.".
 """
 
-theLongest = 0
-index = 0
-counter = 0
-for number in calls:
-    if int(number[3]) >= theLongest:
-        theLongest = int(number[3])
-        index = counter
-    counter += 1
+allTheCalls = {}
+theLongestCall = 0
+theLongestNumber = ''
 
-print(calls[index][0] + ' spent the longest time, ' + str(theLongest) + ' seconds, on the phone during September 2016.')
+for numbers in calls:
+    if numbers[0] not in allTheCalls:
+        allTheCalls[numbers[0]] = int(numbers[3])
+        if allTheCalls[numbers[0]] >= theLongestCall:
+            theLongestCall = allTheCalls[numbers[0]]
+            theLongestNumber = numbers[0]
+    else:
+        allTheCalls[numbers[0]] = int(allTheCalls[numbers[0]]) + int(numbers[3])
+        if allTheCalls[numbers[0]] >= theLongestCall:
+            theLongestCall = allTheCalls[numbers[0]]
+            theLongestNumber = numbers[0]
+
+    if numbers[1] not in allTheCalls:
+        allTheCalls[numbers[1]] = int(numbers[3])
+        if allTheCalls[numbers[1]] >= theLongestCall:
+            theLongestCall = allTheCalls[numbers[1]]
+            theLongestNumber = numbers[1]
+    else:
+        allTheCalls[numbers[1]] = int(allTheCalls[numbers[1]]) + int(numbers[3])
+        if allTheCalls[numbers[1]] >= theLongestCall:
+            theLongestCall = allTheCalls[numbers[1]]
+            theLongestNumber = numbers[1]
+
+print( theLongestNumber +' spent the longest time, '+ str(theLongestCall) + ' seconds, on the phone during September 2016.')

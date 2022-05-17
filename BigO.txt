@@ -1,11 +1,11 @@
 Task0::
 
-The time complexity is O(logn) as we are not doing anything except three lines of code
+The time complexity is O(1) as we are not doing anything except three lines of code
 
 
 Task1::
 
-The time complexity is O(n) because we are looping one time and the loop increase depending on the input
+The time complexity is O(n^2) because we are looping one time and the loop increase depending on the input and because we are not using Sets and Dictionaris
 
 
 Task2::
@@ -14,8 +14,8 @@ The time complexity is O(n) because we are looping one time and the loop increas
 
 Task3::
 
-as of part a  and b together the time complexity is O(n) because we are looping one time and the loop increase depending on the input
+as of part a  and b together the time complexity is O(nlogn) because we are looping one time and the loop increase depending on the input and we are sorting
 
 Task4::
 
-Without the sorting and the printing list the time complexity is O(n) because we are looping one time and the loop increase depending on the input
+Without the sorting and the printing list the time complexity is O(n^2) because we are looping one time and the loop increase depending on the input and because we are not using Sets and Dictionaris
