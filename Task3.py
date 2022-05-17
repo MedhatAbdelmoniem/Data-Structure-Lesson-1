@@ -3,6 +3,7 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
+from operator import indexOf
 
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -44,3 +45,22 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+areaCodes = []
+
+for numbers in calls:
+  if numbers[0][slice(5)] == '(080)':
+    if numbers[1][slice(2)] == '(0':
+      areaCodes.append(numbers[1][slice(indexOf(numbers[1],')') + 1)])
+    if numbers[1][slice(3)] == '140':
+      areaCodes.append('140')
+    if numbers[1][slice(1)] == '7':
+      areaCodes.append(numbers[1][slice(4)])
+    if numbers[1][slice(1)] == '8':
+      areaCodes.append(numbers[1][slice(4)])
+    if numbers[1][slice(1)] == '9':
+      areaCodes.append(numbers[1][slice(4)])
+
+print('The numbers called by people in Bangalore have codes: ')
+areaCodes.sort()
+for areas in areaCodes:
+  print(areas)
